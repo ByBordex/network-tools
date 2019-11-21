@@ -1,10 +1,14 @@
-________           ______       
-___  __/______________  /_______
-__  /  _  __ \  __ \_  /__  ___/
-_  /   / /_/ / /_/ /  / _(__  ) 
-/_/    \____/\____//_/  /____/  
-                                
+# Network-tools
+Dockerized collection of tools for network troubleshooting
 
-Collection of tools for network troubleshooting
+Dockerhub registry: [vicsufer/network-tools](https://hub.docker.com/r/vicsufer/network-tools)
 
-Dockerhub registry: vicsufer/network-tools
+## Installed packages:
+- curl
+- ping
+- netcat
+- telnet
+- net-tools
+- traceroute
+- dnstutils
+- nmap
