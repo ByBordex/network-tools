@@ -14,15 +14,14 @@ jobs:
         password: ${{secrets.REGISTRY_PASSWORD}}
         login-server: https://index.docker.io/v1/
     - name: Run CICD script
-      uses: actions/github-script@0.3.0
-      with:
-        script: |
-          # Get commited dockerfiles.
-          files=$(git log -1 --stat --name-only | grep Dockerfile)
-          # Build and push each new Dockerfile/image
-          for file in $files
-          do
-            docker build -f $file -t vicsufer/tools:$(basename $(dirname $file)) $(dirname file)
-            docker push vicsufer/tools:$(basename $(dirname $file))
-          done
+      run: |
+        # Get commited dockerfiles.
+        files=$(git log -1 --stat --name-only | grep Dockerfile)
+        # Build and push each new Dockerfile/image
+        for file in $files
+        do
+          docker build -f $file -t vicsufer/tools:$(basename $(dirname $file)) $(dirname file)
+          docker push vicsufer/tools:$(basename $(dirname $file))
+        done
+      shell: bash
 
