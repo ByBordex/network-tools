@@ -7,14 +7,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: Azure/docker-login@v1
-      name: Docker Login
+    - name: Docker Login
+      uses: Azure/docker-login@v1
       with:
         username: ${{secrets.REGISTRY_USERNAME}}
         password: ${{secrets.REGISTRY_PASSWORD}}
         login-server: https://index.docker.io/v1/
-    - uses: actions/github-script@0.3.0
     - name: Run CICD script
+      uses: actions/github-script@0.3.0
       with:
         script: |
           # Get commited dockerfiles.
