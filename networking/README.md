@@ -1,7 +1,7 @@
 # Network-tools
 Dockerized collection of tools for network troubleshooting
 
-Dockerhub registry: [vicsufer/network-tools](https://hub.docker.com/r/vicsufer/network-tools)
+Dockerhub registry: [vicsufer/tools:networking](https://hub.docker.com/r/vicsufer/tools)
 
 ## Installed packages:
 - curl
