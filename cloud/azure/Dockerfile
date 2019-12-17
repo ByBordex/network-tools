@@ -1,7 +1,7 @@
 FROM debian:9-slim
 
 LABEL description = "Collection of tools for ops."
-LABEL maintainer = "sysadmins@the-cocktail.com"
+LABEL maintainer="Víctor Suárez Fernández <github @vicsufer>""
 
 RUN apt update \
     && apt install -y --no-install-recommends \
