@@ -24,10 +24,9 @@ jobs:
       run: |
         # Get commited dockerfiles.
         files=$(git log -1 --stat --name-only | grep Dockerfile)
-
         # If not dockerfiles exit
         if [ -z "$files" ] 
-        then:
+        then
           exit 0
 
         # Iterate each new Dockerfile/image
