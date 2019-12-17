@@ -24,11 +24,14 @@ jobs:
       run: |
         # Get commited dockerfiles.
         files=$(git log -1 --stat --name-only | grep Dockerfile)
-        # Build and push each new Dockerfile/image
+        # Iterate each new Dockerfile/image
         for file in $files
         do
-          docker build -f $file -t vicsufer/tools:$(basename $(dirname $file)) $(dirname file)
-          docker push vicsufer/tools:$(basename $(dirname $file))
+          # Use name of Dockerfile parent folder as Toolkit name.
+          toolkit=$(basename $(dirname $file))
+          #Build and push each image
+          docker build -f $file -t vicsufer/tools:$toolkit" $(dirname file)
+          docker push vicsufer/tools:$toolkit
         done
       shell: bash
 
