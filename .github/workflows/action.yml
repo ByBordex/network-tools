@@ -28,7 +28,7 @@ jobs:
         if [ -z "$files" ] 
         then
           exit 0
-
+        fi
         # Iterate each new Dockerfile/image
         for file in $files
         do
@@ -38,5 +38,6 @@ jobs:
           docker build -f $file -t vicsufer/tools:$toolkit $(dirname file)
           docker push vicsufer/tools:$toolkit
         done
+
       shell: bash
 
